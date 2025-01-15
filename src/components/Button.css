@@ -1,0 +1,19 @@
+.card-button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1em;
+    margin-top: 16px;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.card-button:hover {
+    background-color: #45a049;
+}
