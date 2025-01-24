@@ -1,7 +1,8 @@
 import {getAsyncDataById} from "../data/getAsyncData"
 import { useEffect, useState } from "react"
-import ItemDeatail from "./ItemDeatail";
+import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+
 
 
 export default function ItemDetailContainer() {
@@ -11,8 +12,7 @@ export default function ItemDetailContainer() {
    
 
     useEffect (()=>{
-
-        async function getItemData(){
+      async function getItemData(){
             const response = await getAsyncDataById (id);  
             setItemInfo (response);
         }
@@ -25,8 +25,6 @@ export default function ItemDetailContainer() {
 
 console.log(itemInfo)
 
-  return (
-    
-    <ItemDeatail {...itemInfo}/>
-  );
+return <ItemDetail {...itemInfo} />;
+  
 }

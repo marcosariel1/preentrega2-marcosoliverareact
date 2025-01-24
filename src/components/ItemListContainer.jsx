@@ -34,12 +34,12 @@ export default function ItemListContainer({greeting}) {
             .catch ((error)=>alert(error));
         }
         
-    }, []);
+    }, [catid]);
 
     return <>
-        
+        <h1>{greeting}</h1>
         <section className='flex-container'>
-            <ItemList greeting={greeting} products= {products}></ItemList>      
+            <ItemList products= {products}></ItemList>      
         </section>
 
 
