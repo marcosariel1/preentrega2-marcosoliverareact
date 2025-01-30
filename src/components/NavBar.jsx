@@ -13,6 +13,7 @@ export default function NavBar() {
             <Link className="nav-link" to="/category/Amplificadores">Amplificadores</Link>
             <Link className="nav-link" to="/category/Pedales">Pedales</Link>
             <Link className="nav-link" to="/category/Accesorios">Accesorios</Link>
+            <Link className="nav-link" to="/cart">Carrito</Link>
           </div>
         </div>
       </div>

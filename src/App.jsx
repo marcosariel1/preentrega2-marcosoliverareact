@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import ItemCount from './components/ItemCount'
 import {CartContextProvider} from './context/cartContext';
+import CartContainer from './components/CartContainer';
 
 
 
@@ -29,6 +30,8 @@ function App() {
         <Route path='/category/:catid' element={<ItemListContainer greeting={'Búsqueda por categoría'} />}></Route>
 
         <Route path='/item/:id' element={<ItemDetailContainer />}></Route>
+
+        <Route path='/cart' element={<CartContainer/>}></Route>
 
 
       </Routes>
