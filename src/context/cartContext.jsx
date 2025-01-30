@@ -39,7 +39,7 @@ function removeItem(id) {
             cartItemsCount,
             addItem: addItem,
             removeItem: removeItem,
-            name: "CartContext"
+            
         }}>
         {props.children}
 

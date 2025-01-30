@@ -31,7 +31,7 @@ export default function ItemCount(props) {
       </div>
 
       <div>
-        <button onClick={ () => onSubmitCount (count)} className="card-button">Agregar al carrito</button>
+        <Button onClick={ () => onSubmitCount (count)} text="Agregar al carrito" ></Button>
       </div>
 
 

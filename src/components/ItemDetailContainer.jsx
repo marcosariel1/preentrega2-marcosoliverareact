@@ -2,11 +2,12 @@ import {getAsyncDataById} from "../data/getAsyncData"
 import { useEffect, useState } from "react"
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
+import Loader from "./Loader";
 
 
 
 export default function ItemDetailContainer() {
-    const[itemInfo, setItemInfo]= useState ({});
+    const[itemInfo, setItemInfo]= useState (null);
     
     const {id} = useParams(); 
    
@@ -25,6 +26,9 @@ export default function ItemDetailContainer() {
 
 console.log(itemInfo)
 
-return <ItemDetail {...itemInfo} />;
+if (itemInfo === null){
+    return <Loader/>
+}
+else return <ItemDetail {...itemInfo} />;
   
 }
