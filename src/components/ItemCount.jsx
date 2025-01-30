@@ -1,28 +1,40 @@
 import { useState } from "react"
+import Button from "./Button";
 
 
-export default function ItemCount() {
-const [count, setCount]= useState (1);
+export default function ItemCount(props) {
+  let [count, setCount] = useState(1);
+  const { onSubmitCount } = props;
 
-const handleAdd = () => {
-    setCount (count +1);
+  const handleAdd = () => {
+    if (count >= props.max) return;  
+    setCount(count + 1);
+   
+  }
 
-}
+  const handleSubstract = () => {
+    if (count <= 1) return;
+    setCount(count - 1);
 
-const handleSubstract = () => {
-    setCount (count -1);
-
-}
+  }
 
 
 
   return (
     <div>
+      <div>
+
         <button onClick={handleSubstract}>➖</button>
         <span >{count}</span>
         <button onClick={handleAdd}>➕</button>
-        
-        
-        </div>
+
+      </div>
+
+      <div>
+        <button onClick={ () => onSubmitCount (count)} className="card-button">Agregar al carrito</button>
+      </div>
+
+
+    </div>
   )
 }

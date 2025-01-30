@@ -9,18 +9,22 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 import ItemCount from './components/ItemCount'
+import {CartContextProvider} from './context/cartContext';
 
 
 
 
 function App() {
 
+
+
   return (
+    <CartContextProvider >
     <BrowserRouter>
       <NavBar />
 
       <Routes>
-        <Route path="/" element={<ItemListContainer greeting='La casa del guitarrista' />}/>
+        <Route path="/" element={<ItemListContainer greeting='La casa del guitarrista' />} />
 
         <Route path='/category/:catid' element={<ItemListContainer greeting={'Búsqueda por categoría'} />}></Route>
 
@@ -34,6 +38,8 @@ function App() {
       </footer>
 
     </BrowserRouter>
+
+    </CartContextProvider>
 
   );
 }

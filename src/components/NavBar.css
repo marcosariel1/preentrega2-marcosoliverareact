@@ -1,3 +1,68 @@
 .sizeLogo {
     height: 70px;
 }
+ 
+
+
+/* Navbar.css ---esto lo hice con IA pero originalmente lo hice con bootstrap*/
+
+
+/*
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--bs-body-bg-tertiary);
+}
+
+  
+  .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .navbar-collapse {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+  
+  .navbar-nav {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-link {
+    margin-left: 20px;
+    color: #000; /* Cambia el color según sea necesario */
+    /*text-decoration: none;
+  }
+  
+  .nav-link.active {
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .navbar-collapse {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .navbar-nav {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .nav-link {
+      margin: 10px 0;
+    }
+  }
+  */
