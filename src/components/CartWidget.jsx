@@ -5,7 +5,11 @@ export default function CartWidget() {
     
     return <>
     <button className="nav-link">Carrito🛒 
-    <span>{context.cartItemsCount()}</span>
+    { 
+    context.cartItemsCount() > 0 ?
+    <span>{context.cartItemsCount()}</span> : null
+
+    }
     </button>
     </>;
 }

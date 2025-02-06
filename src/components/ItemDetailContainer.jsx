@@ -1,4 +1,4 @@
-import {getAsyncDataById} from "../data/getAsyncData"
+import {getAsyncDataById} from "../data/database"
 import { useEffect, useState } from "react"
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
@@ -29,6 +29,6 @@ console.log(itemInfo)
 if (itemInfo === null){
     return <Loader/>
 }
-else return <ItemDetail {...itemInfo} />;
+else return <ItemDetail {...itemInfo} id={id} />;
   
 }

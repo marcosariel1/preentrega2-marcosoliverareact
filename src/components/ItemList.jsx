@@ -4,8 +4,8 @@ import "../App.css";
 export default function ItemList(props) {
   return (
     <div className="flex-container"
-    style={{ backgroundImage: `url(/images/fondo3.webp)`,
-    backgroundSize: 'cover'}}>
+    style={{ backgroundImage: `url(/images/fondometal.jpg)`,
+    backgroundSize: 'contain'}}>
 
       <h2>{props.greeting}</h2>
 

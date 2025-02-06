@@ -11,7 +11,7 @@ import { useState } from "react";
 export default function ItemDetail(props) {
   const[isAddedToCart, setIsAddedToCart] = useState(false);
 
-  const { title, price, img, description, id, stock } = props;
+  const { title, price, img, description, stock, id } = props;
   const { addItem } = useContext(cartContext);
 
   function handledAddToCart(count) {

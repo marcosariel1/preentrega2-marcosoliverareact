@@ -17,7 +17,7 @@ export default function NavBar() {
           </div>
         </div>
       </div>
-      <CartWidget />
+      <CartWidget/>
     </nav>
 
 

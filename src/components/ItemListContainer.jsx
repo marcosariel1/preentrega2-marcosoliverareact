@@ -1,7 +1,7 @@
 
 
 import './CardProducts.css'
-import getAsyncData, { getAsyncDataByCategory } from '../data/getAsyncData';
+import getAsyncData, { getAsyncDataByCategory } from '../data/database';
 import { useState, useEffect } from 'react';
 import ItemList from './ItemList';
 import { use } from 'react';
