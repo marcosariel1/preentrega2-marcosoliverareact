@@ -1,14 +1,35 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import cartContext from "../context/cartContext"
 import { createBuyOrder } from "../data/database";
 function CartContainer() {
+    const [userData, setUserData] = useState({
+        username: "",
+        surname: "",
+        email: "",
+        phone: ""
+      })
+
+      function onInputChange(evt){
+        //1. Que input modificamos
+        const inputName = evt.target.name;   
+        // 2. Copiar el state
+        const newUserData= {...userData}
+        // 3. modifico el nuevo objecot
+        newUserData[inputName] = evt.target.value
+        // 4. update del state
+        setUserData(newUserData)
+      }
+
     const { cartItems, removeItem, getTotalPrice } = useContext(cartContext);
 
-    async function handleCheckout() {
+    async function handleCheckout(evt) {
+        evt.preventDefault();
         const orderData = {
             buyer: {
-                name: "Pedro",
-                email: "u5YtI@example.com",
+                username: userData.username,
+                surname: userData.surname,
+                phone: userData.phone,
+                email: userData.email,
             },
             items: cartItems,
             total: getTotalPrice(),
@@ -48,7 +69,40 @@ function CartContainer() {
             ))
 
             }
-            <button onClick={handleCheckout}>Comprar</button>
+              <form>
+      <h2>Completa tus datos para completar la compra🛍</h2>
+     
+        <div style={{ display: 'flex', marginBottom: 8 }}>
+          <label style={{ width: '100px', marginRight: 4 }}>Nombre</label>
+          <input name="username" type="text" onChange={onInputChange} />
+        </div>
+     
+        <div style={{ display: 'flex', marginBottom: 8 }}>
+          <label style={{ width: '100px', marginRight: 4 }}>Apellido</label>
+          <input name="surname" type="text" onChange={onInputChange} />
+        </div>
+     
+        <div style={{ display: 'flex', marginBottom: 8 }}>
+          <label style={{ width: '100px', marginRight: 4 }}>Teléfono</label>
+          <input name="phone" type="text" onChange={onInputChange} />
+        </div>
+
+        <div style={{ display: 'flex', marginBottom: 8 }}>
+          <label style={{ width: '100px', marginRight: 4 }}>E-mail</label>
+          <input name="email" type="text" onChange={onInputChange} />
+        </div>
+     
+      <button
+        disabled={!(userData.username !== '' && userData.surname !== '' && userData.phone !== '' && userData.email !== '')}
+        onClick={handleCheckout}
+      >
+        Comprar
+      </button>
+    </form>
+
+
+
+           
 
         </div>
     );
