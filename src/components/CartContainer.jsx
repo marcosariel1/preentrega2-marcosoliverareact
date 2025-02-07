@@ -49,7 +49,8 @@ function CartContainer() {
 
     return (
         <div>
-            <h1>{cartItems.length === 0 ? "Tu carrito está vacío" : "Tu carrito"}</h1>
+            <h1>{purchaseId ? "Gracias por tu compra" : (cartItems.length === 0 ? "Tu carrito está vacío" : "Tu carrito")}</h1>
+
 
             {cartItems.map((item) => (
                 <div key={item.id}>
@@ -122,7 +123,7 @@ function CartContainer() {
 
             {purchaseId && (
                 <div>
-                    <p>Gracias por tu compra. Tu ID de compra es: {purchaseId}</p>
+                    <p>Tu ID de compra es: {purchaseId}</p>
                 </div>
             )}
 
