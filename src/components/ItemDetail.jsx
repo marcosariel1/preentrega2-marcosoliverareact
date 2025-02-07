@@ -4,6 +4,7 @@ import ItemCount from "./ItemCount";
 import { useContext } from "react";
 import cartContext from "../context/cartContext";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 
@@ -30,7 +31,9 @@ setIsAddedToCart(true);
       <div>
         {
           isAddedToCart 
-          ? <Button text="Ver carrito" /> 
+          ? <Link to='/cart'>
+          <Button text="Ver carrito"/> 
+          </Link>
           :<ItemCount onSubmitCount={handledAddToCart} max={stock} />
 
         }

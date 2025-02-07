@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import ItemList from './ItemList';
 import { use } from 'react';
 import { useParams } from 'react-router-dom';
+import Loader from './Loader';
 
 
 
@@ -36,7 +37,12 @@ export default function ItemListContainer({greeting}) {
         
     }, [catid]);
 
-    return <>
+
+    if (products == 0){
+        return <Loader/>
+    }
+
+    else return <>
         <h1>{greeting}</h1>
         <section className='flex-container'>
             <ItemList products= {products}></ItemList>      

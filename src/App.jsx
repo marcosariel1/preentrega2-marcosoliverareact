@@ -26,7 +26,7 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route path="/" element={<ItemListContainer greeting='La casa del guitarrista' />} />
+        <Route path="/" element={<ItemListContainer greeting='ROCKSTORE - La Casa del Guitarrista' />} />
 
         <Route path='/category/:catid' element={<ItemListContainer greeting={'Búsqueda por categoría'} />}></Route>
 
