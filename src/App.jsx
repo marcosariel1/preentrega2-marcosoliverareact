@@ -1,51 +1,35 @@
-import { useState } from 'react';
-
 import './App.css';
 import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-
-
-import ItemCount from './components/ItemCount'
-import {CartContextProvider} from './context/cartContext';
+import { CartContextProvider } from './context/cartContext';
 import CartContainer from './components/CartContainer';
-
-
-
 
 
 function App() {
 
-
-
   return (
     <CartContextProvider >
-    <BrowserRouter>
-      <NavBar />
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting='ROCKSTORE - La Casa del Guitarrista' />} />
 
-      <Routes>
-        <Route path="/" element={<ItemListContainer greeting='ROCKSTORE - La Casa del Guitarrista' />} />
+          <Route path='/category/:catid' element={<ItemListContainer greeting={'Búsqueda por categoría'} />}></Route>
 
-        <Route path='/category/:catid' element={<ItemListContainer greeting={'Búsqueda por categoría'} />}></Route>
+          <Route path='/item/:id' element={<ItemDetailContainer />}></Route>
 
-        <Route path='/item/:id' element={<ItemDetailContainer />}></Route>
+          <Route path='/cart' element={<CartContainer />}></Route>
+        </Routes>
 
-        <Route path='/cart' element={<CartContainer/>}></Route>
+        <footer>
+          <small>Marcos Olivera 2025</small>
+        </footer>
 
-
-      </Routes>
-
-      <footer>
-        <small>Marcos Olivera 2025</small>
-      </footer>
-
-    </BrowserRouter>
-
+      </BrowserRouter>
     </CartContextProvider>
 
   );
 }
-
 export default App;

@@ -1,13 +1,9 @@
-import products from "../data/data";
 import Button from "./Button";
 import ItemCount from "./ItemCount";
 import { useContext } from "react";
 import cartContext from "../context/cartContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
-
-
 
 export default function ItemDetail(props) {
   const[isAddedToCart, setIsAddedToCart] = useState(false);
@@ -38,10 +34,7 @@ setIsAddedToCart(true);
 
         }
 
-
-      </div>
-
-
-    </div>
+</div>
+</div>
   );
 }

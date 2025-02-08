@@ -4,8 +4,10 @@ import "../App.css";
 export default function ItemList(props) {
   return (
     <div className="flex-container"
-    style={{ backgroundImage: `url(/images/fondometal.jpg)`,
-    backgroundSize: 'contain'}}>
+      style={{
+        backgroundImage: `url(/images/fondometal.jpg)`,
+        backgroundSize: 'contain'
+      }}>
 
       <h2>{props.greeting}</h2>
 
@@ -18,15 +20,8 @@ export default function ItemList(props) {
           text={item.text}
           img={item.img}
         />
-
-
-
       ))}
-
     </div>
-
-
-
   );
 }
 

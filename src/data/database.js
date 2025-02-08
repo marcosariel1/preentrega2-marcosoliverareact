@@ -50,25 +50,10 @@ export async function getAsyncDataByCategory(catId){
 
 }
 
-//solo p para probar
-export async function createDocument(){
-
-    const docRef = await addDoc(collection(db, "products"), {
-      
-      title: 'Amplificador Blackstar',
-      price: 10000,
-      img: '/images/ampli5.webp',
-      stock: 10,
-      category: 'Amplificadores',
-      description:'Amplificador Blackstar de 40w transistorizado' 
-      });
-      console.log("Document written with ID: ", docRef.id);
-}
 async function exportProductsToDB() {
  for(let item of products){
     delete item.id;
     const docId = await addDoc(collection(db, "products"), item);
-    console.log("Document written with ID: ", docId.id);
 }}
 
 export async function createBuyOrder(orderData){

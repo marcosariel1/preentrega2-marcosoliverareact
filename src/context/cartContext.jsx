@@ -44,7 +44,7 @@ export function CartContextProvider(props) {
         return total;
     }
 
-    // Nueva función para vaciar el carrito
+    // función para vaciar el carrito
     function clearCart() {
         setCartItems([]);
     }
@@ -57,7 +57,7 @@ export function CartContextProvider(props) {
                 addItem,
                 removeItem,
                 getTotalPrice,
-                clearCart // Añadido clearCart al contexto
+                clearCart 
             }}
         >
             {props.children}

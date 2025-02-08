@@ -5,10 +5,8 @@ export default function CartWidget() {
 
     return <>
         <button type="button" className="btn btn-outline-secondary">Carrito🛒
-            {
-                context.cartItemsCount() > 0 ?
-                    <span>{context.cartItemsCount()}</span> : null
-
+            {context.cartItemsCount() > 0 ?
+                <span>{context.cartItemsCount()}</span> : null
             }
         </button>
     </>;

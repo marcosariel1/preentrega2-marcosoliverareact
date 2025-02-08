@@ -51,7 +51,6 @@ function CartContainer() {
         <div>
             <h1>{purchaseId ? "Gracias por tu compra" : (cartItems.length === 0 ? "Tu carrito está vacío" : "Tu carrito")}</h1>
 
-
             {cartItems.map((item) => (
                 <div key={item.id}>
                     <div>
@@ -127,7 +126,6 @@ function CartContainer() {
                 </div>
             )}
 
-            
         </div>
     );
 }
