@@ -6,7 +6,8 @@ export default function ItemList(props) {
     <div className="flex-container"
       style={{
         backgroundImage: `url(/images/fondometal.jpg)`,
-        backgroundSize: 'contain'
+        backgroundSize: 'contain',
+        borderRadius: '0.5em',
       }}>
 
       <h2>{props.greeting}</h2>

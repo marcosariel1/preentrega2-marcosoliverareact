@@ -55,10 +55,10 @@ function CartContainer() {
                 <div key={item.id}>
                     <div>
                         <h2>{item.title}</h2>
-                        <img src={item.img} alt="imagen producto" />
+                        <img style={{ width: "25rem" }} src={item.img} alt="imagen producto" />
                         <p>Precio: ${item.price}</p>
                         <p>Unidades: {item.count}</p>
-                        <button onClick={() => removeItem(item.id)}>Eliminar</button>
+                        <button onClick={() => removeItem(item.id)} className="btn btn-outline-secondary">Eliminar</button>
                     </div>
                     <hr />
                 </div>
@@ -70,7 +70,7 @@ function CartContainer() {
 
             {cartItems.length > 0 && !purchaseId && (
                 <form>
-                    <h2>Completa tus datos para completar la compra 🛍</h2>
+                    <h2>Completa tus datos para finalizar la compra</h2>
                     <div style={{ display: 'flex', marginBottom: 8 }}>
                         <label style={{ width: '100px', marginRight: 4 }}>Nombre</label>
                         <input
@@ -111,7 +111,7 @@ function CartContainer() {
                             title="Ingrese su e-mail. Debe contener un carácter '@'"
                             required />
                     </div>
-                    <button
+                    <button className="btn btn-success"
                         disabled={!(userData.username !== '' && userData.surname !== '' && userData.phone !== '' && userData.email !== '')}
                         onClick={handleCheckout}
                     >

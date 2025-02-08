@@ -19,9 +19,9 @@ export default function ItemCount(props) {
   return (
     <div>
       <div>
-        <button onClick={handleSubstract}>➖</button>
-        <span >{count}</span>
-        <button onClick={handleAdd}>➕</button>
+        <button onClick={handleSubstract} type="button" className="btn btn-outline-secondary">➖</button>
+        <span >  {count}  </span>
+        <button onClick={handleAdd} type="button" className="btn btn-outline-secondary">➕</button>
       </div>
       <div>
         <Button onClick={() => onSubmitCount(count)} text="Agregar al carrito" ></Button>
